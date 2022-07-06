@@ -4,6 +4,8 @@ import { useSession, getSession } from "next-auth/react";
 export default function NormalPage() {
   const { data: session, status } = useSession();
 
+  console.log({ session });
+  console.log({ status });
   return (
     <>
       <h1>Normal</h1>
