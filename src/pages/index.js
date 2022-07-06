@@ -11,8 +11,8 @@ export default function Home() {
       <h1>NextAuth.js Example</h1>
       <p>
         An example site to demonstrate how to use{" "}
-        <a href="https://next-auth.js.org">NextAuth.js</a> for authentication in
-        Gatsby.
+        <a href="https://next-auth.js.org">NextAuth.js</a> with Slack for
+        authentication in Gatsby.
       </p>
       {
         {
