@@ -18,12 +18,12 @@ export default function ProtectedPage() {
     }
   }, [status, session]);
 
-  return status === 'authenticated' ? (
+  return status === "authenticated" ? (
     <>
       <Layout>
         <h1>Protected</h1>
         <p>You can only view this page if you are signed in.</p>
       </Layout>
     </>
-  )
+  ) : null;
 }
