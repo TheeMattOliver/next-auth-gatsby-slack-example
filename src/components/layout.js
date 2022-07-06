@@ -3,7 +3,7 @@ import * as styles from "./layout.module.css";
 import { SlackButton } from "./SlackButton";
 import { signIn, signOut, useSession } from "next-auth/react";
 
-export default function Layout({ children }) {
+function Layout({ children }) {
   const session = useSession();
 
   return (
@@ -59,3 +59,4 @@ export default function Layout({ children }) {
     </div>
   );
 }
+export default Layout;

@@ -2,7 +2,7 @@
   "name": "next-auth-gatsby",
   "private": true,
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby clean && gatsby build",
     "dev": "gatsby develop --port 3000",
     "dev:local": "vercel dev",
     "start": "npm run develop",
