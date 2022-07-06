@@ -2,7 +2,7 @@
 // called after every page is created.
 
 exports.onCreatePage = async ({ page, actions }) => {
-  console.log("creating pages....");
+  console.log(`creating page at ${page}`);
   const { createPage } = actions;
   // page.matchPath is a special key that's used for matching pages
   // only on the client.
