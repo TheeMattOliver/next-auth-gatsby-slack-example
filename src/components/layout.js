@@ -1,10 +1,10 @@
-import * as React from "react"
-import * as styles from "./layout.module.css"
-
-import { signIn, signOut, useSession } from "next-auth/react"
+import * as React from "react";
+import * as styles from "./layout.module.css";
+import { SlackButton } from "./SlackButton";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Layout({ children }) {
-  const session = useSession()
+  const session = useSession();
 
   return (
     <div className={styles.wrapper}>
@@ -20,16 +20,7 @@ export default function Layout({ children }) {
                 <span className={styles.notSignedInText}>
                   You are not signed in
                 </span>
-                <a
-                  href="/api/auth/signin"
-                  className={styles.buttonPrimary}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    signIn()
-                  }}
-                >
-                  Sign in
-                </a>
+                <SlackButton />
               </>
             )}
             {session?.status === "authenticated" && (
@@ -53,8 +44,8 @@ export default function Layout({ children }) {
                   href="/api/auth/signout"
                   className={styles.button}
                   onClick={(e) => {
-                    e.preventDefault()
-                    signOut()
+                    e.preventDefault();
+                    signOut();
                   }}
                 >
                   Sign out
@@ -66,5 +57,5 @@ export default function Layout({ children }) {
       </header>
       <main>{children}</main>
     </div>
-  )
+  );
 }
