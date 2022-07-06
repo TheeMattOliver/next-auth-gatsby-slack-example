@@ -7,7 +7,6 @@ const App = () => (
   <Layout>
     <Router>
       <Profile path="/app/profile" />
-      <Login path="/" />
     </Router>
   </Layout>
 );
