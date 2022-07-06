@@ -1,26 +1,11 @@
-import GitHubProvider from "next-auth/providers/github"
-import CredentialsProvider from "next-auth/providers/credentials"
+import SlackProvider from "next-auth/providers/slack";
 
 /** @type {import("next-auth").NextAuthOptions} */
 export const authConfig = {
   providers: [
-    CredentialsProvider({
-      credentials: {
-        Password: { placeholder: `type "password"`, type: "password" },
-      },
-      authorize(credentials) {
-        if (credentials.Password === "password") {
-          return {
-            name: "John Doe",
-            email: "john@doe.com",
-            image: "https://www.fillmurray.com/200/200",
-          }
-        }
-      },
-    }),
-    GitHubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+    SlackProvider({
+      clientId: process.env.SLACK_CLIENT_ID,
+      clientSecret: process.env.SLACK_CLIENT_SECRET,
     }),
   ],
   theme: {
@@ -28,4 +13,5 @@ export const authConfig = {
     colorScheme: "light",
     brandColor: "#663399",
   },
-}
+  secret: process.env.NEXT_PUBLIC_SECRET,
+};
