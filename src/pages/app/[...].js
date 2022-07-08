@@ -1,10 +1,10 @@
-import React from "react"
-import {Link} from 'gatsby'
-import { Router } from "@reach/router"
+import React from "react";
+import { Link } from "gatsby";
+import { Router } from "@reach/router";
 
-const Profile = () => <p>profile</p>
-const Details = () => <p>details</p>
-const Default = () => <p>index</p>
+const Profile = () => <p>profile</p>;
+const Details = () => <p>details</p>;
+const Default = () => <p>index</p>;
 
 const App = () => {
   return (
@@ -14,11 +14,12 @@ const App = () => {
         <Details path="/details" />
         <Default path="/" />
       </Router>
-    {
-    ['profile',  'details', ''].map( sub => <li><Link to={`/app/${sub}`}>{sub != '' ? sub : '/'}</Link></li> )
-    }
+      {["profile", "details", ""].map((sub) => (
+        <li>
+          <Link to={`/app/${sub}`}>{sub != "" ? sub : "/"}</Link>
+        </li>
+      ))}
     </>
-  )
-
-}
-export default App∏
+  );
+};
+export default App;
