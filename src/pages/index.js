@@ -21,11 +21,6 @@ export default function Home() {
           unauthenticated: "Please sign in",
         }[session?.status ?? "loading"]
       }
-      {status === "authenticated" ? (
-        <>
-          <p>You can only view this content here if you are signed in.</p>
-        </>
-      ) : null}
       ;
     </Layout>
   );
