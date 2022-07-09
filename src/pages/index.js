@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { useSession } from "next-auth/react";
 
 export default function Home() {
-  const session = useSession();
+  const { session, status } = useSession();
 
   return (
     <Layout>
@@ -21,6 +21,12 @@ export default function Home() {
           unauthenticated: "Please sign in",
         }[session?.status ?? "loading"]
       }
+      {status === "authenticated" ? (
+        <>
+          <p>You can only view this content here if you are signed in.</p>
+        </>
+      ) : null}
+      ;
     </Layout>
   );
 }

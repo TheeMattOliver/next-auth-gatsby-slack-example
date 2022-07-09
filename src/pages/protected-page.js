@@ -1,6 +1,6 @@
 import React from "react";
 import { navigate } from "gatsby";
-import { useSession, getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 import Layout from "../components/Layout";
 
@@ -15,7 +15,7 @@ export default function ProtectedPage() {
     }
 
     if (status === "unauthenticated") {
-      navigate("/app/login");
+      navigate("/");
     }
   }, [status, session]);
 
@@ -23,7 +23,7 @@ export default function ProtectedPage() {
     <>
       <Layout>
         <h1>Protected</h1>
-        <p>You can only view this page if you are signed in.</p>
+        <p>You can only view this content here if you are signed in.</p>
       </Layout>
     </>
   ) : null;
