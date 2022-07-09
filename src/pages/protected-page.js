@@ -1,4 +1,5 @@
 import React from "react";
+import { navigate } from "gatsby";
 import { useSession, getSession } from "next-auth/react";
 
 import Layout from "../components/Layout";
