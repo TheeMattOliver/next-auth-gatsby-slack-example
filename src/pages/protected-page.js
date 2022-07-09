@@ -5,27 +5,16 @@ import { useSession } from "next-auth/react";
 import Layout from "../components/Layout";
 
 export default function ProtectedPage() {
-  // const { status, session } = useSession();
+  const session = useSession();
+  const status = useSession();
 
-  // console.log({ session }); // undefined at build time
+  console.log({ session });
+  console.log({ status });
 
-  // useEffect(() => {
-  //   if (status === "loading") {
-  //     return <p>Loading...</p>;
-  //   }
-
-  //   if (status === "unauthenticated") {
-  //     navigate("/");
-  //   }
-  // }, [status, session]);
-
-  // return status === "authenticated" ? (
-  //   <>
-  //     <Layout>
-  //       <h1>Protected</h1>
-  //       <p>You can only view this content here if you are signed in.</p>
-  //     </Layout>
-  //   </>
-  // ) : null;
-  return <h1>protected</h1>;
+  return (
+    <Layout>
+      <h1>Protected</h1>
+      <p>You should only be able to see this message if you're signed in.</p>
+    </Layout>
+  );
 }
