@@ -14,9 +14,8 @@ export default function ProtectedPage() {
   return (
     <Layout>
       <h1>Protected</h1>
-      {status.status === "authenticated" ? (
-        <p>You should only be able to see this message if you're signed in.</p>
-      ) : null}
+
+      <p>You should only be able to see this message if you're signed in.</p>
     </Layout>
   );
 }
