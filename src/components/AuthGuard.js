@@ -12,7 +12,7 @@ export default function AuthGuard({ children }) {
         {
           loading: <p>Loading session...</p>,
           authenticated: children,
-          unauthenticated: Disclaimer,
+          unauthenticated: <Disclaimer />,
         }[session?.status ?? "loading"]
       }
     </>
