@@ -6,9 +6,6 @@ import Layout from "../components/Layout";
 import AuthGuard from "../components/AuthGuard";
 
 export default function ProtectedPage() {
-  const session = useSession();
-  const status = useSession();
-
   return (
     <Layout>
       <h1>Protected page</h1>

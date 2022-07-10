@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useSession } from "next-auth/react";
 
+import Disclaimer from "./Disclaimer";
+
 export default function AuthGuard({ children }) {
   const session = useSession();
 
